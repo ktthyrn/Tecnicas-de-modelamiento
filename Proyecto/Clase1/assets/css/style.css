@@ -1,16 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- Paleta de Colores con CSS Variables --- */
+
 :root {
-    --header-background: #880e4f; /* Un tono vino/maroon oscuro */
-    --body-background: #fdf5f6;   /* Un fondo rosado muy pálido */
-    --card-background: #ffffff;   /* Blanco puro para las tarjetas */
-    --primary-accent: #ffcdd4;   /* El color rosado que pediste */
-    --text-color: #333;          /* Texto principal oscuro */
-    --header-text-color: #ffffff; /* Texto del header blanco */
-    --nav-link-active-bg: #ffcdd4; /* Fondo del link activo */
-    --nav-link-active-text: #880e4f; /* Texto del link activo */
+    --header-background: #880e4f; 
+    --body-background: #fdf5f6;  
+    --card-background: #ffffff;   
+    --primary-accent: #ffcdd4;   
+    --text-color: #333;          
+    --header-text-color: #ffffff; 
+    --nav-link-active-bg: #ffcdd4; 
+    --nav-link-active-text: #880e4f; 
 }
 
 
@@ -85,5 +85,42 @@ body {
 
 .card h2 {
     margin-top: 0;
-    color: var(--header-background); /* Título de la tarjeta a juego con el header */
+    color: var(--header-background); 
+}
+
+
+.input-label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+}
+
+.btn-generar {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--header-background); 
+    color: var(--header-text-color); 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-generar:hover {
+    background-color: #6a0b3d; 
 }
