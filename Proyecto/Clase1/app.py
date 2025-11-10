@@ -13,14 +13,44 @@ app.layout = html.Div([
     html.Header([
         html.H1("Técnicas de Modelamiento Matemático"),
 
+        # --- BARRA DE NAVEGACIÓN MODIFICADA CON DROPDOWN ---
         html.Nav([
             
+            # 1. Link de Inicio (queda separado y visible)
             dcc.Link(
-                f"{page['name']}",
-                href=page["relative_path"],
+                "Inicio",
+                # Busca la página 'inicio' registrada
+                href=dash.page_registry['pages.inicio']['relative_path'], 
                 className='nav-link'
-            ) for page in dash.page_registry.values()
-        ])
+            ),
+            
+            # 2. Contenedor del Dropdown "Modelos"
+            html.Div([
+                
+                # El "botón" visible (es un link falso)
+                html.A(
+                    "Modelos ▼", # El texto del botón con una flechita
+                    href="#", # href="#" evita que la página recargue
+                    className='nav-link dropdown-btn' # Clases para estilo
+                ),
+                
+                # El contenido que se despliega
+                html.Div([
+                    # Iteramos y creamos un link para cada página
+                    # PERO saltamos la página de 'inicio'
+                    dcc.Link(
+                        f"{page['name']}",
+                        href=page["relative_path"],
+                        className='dropdown-link' # Nueva clase para links internos
+                    ) for page in dash.page_registry.values() if page['module'] != 'pages.inicio'
+                
+                ], className='dropdown-content') # Contenedor de links
+                
+            ], className='dropdown-container') # Contenedor principal del dropdown
+
+        ]) # Fin de html.Nav
+        # --- FIN BARRA DE NAVEGACIÓN ---
+
     ], className='app-header'),
 
     dash.page_container
@@ -28,5 +58,3 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
