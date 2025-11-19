@@ -176,3 +176,45 @@ body {
 .dropdown-container:hover .dropdown-btn {
     background-color: rgba(255, 255, 255, 0.2); /* Mismo hover que nav-link */
 }
+/* ========================================= */
+/* --- ESTILOS PARA LA PÁGINA DE APLICACIONES --- */
+/* ========================================= */
+
+/* Contenedor de cada pestaña */
+.tab-content {
+    padding: 20px;
+}
+
+/* Centra las imágenes de las simulaciones */
+.tab-content img {
+    display: block;
+    margin: 15px auto; /* Centrado horizontal */
+    max-width: 60%; /* Ajusta el tamaño */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo de la barra de pestañas */
+.ReactTabs__TabList {
+    border-bottom: 2px solid var(--header-background) !important;
+}
+
+/* Estilo de cada pestaña (botón) */
+.ReactTabs__Tab {
+    background: var(--body-background) !important;
+    border: 1px solid #ddd !important;
+    border-bottom: none !important;
+    color: #555 !important;
+    padding: 10px 15px !important;
+    font-weight: bold;
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Estilo de la pestaña seleccionada */
+.ReactTabs__Tab--selected {
+    background: white !important;
+    border-color: var(--header-background) !important;
+    color: var(--header-background) !important;
+    border-bottom: 2px solid white !important;
+    margin-bottom: -2px !important; /* Truco para que se una al contenido */
+}
